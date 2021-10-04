@@ -1,13 +1,14 @@
 import React from 'react'
 import styles from './login.module.scss';
 
-function Login() {
+const Login = () => {
+    
     return (
         <div className={styles.container}>
-            <article className="form-leftside">
+            <div className="form-leftside">
                 <img></img>
-            </article>
-            <article className="form-rigthside">
+            </div>
+            <div className="form-rigthside">
                 <form>
                     <div className="form-item">
                         <label htmlFor="email">Email</label>
@@ -19,7 +20,7 @@ function Login() {
                     </div>
                     <button type="submit" id="btn">Log in</button>
                 </form>
-            </article>
+            </div>
         </div>
     )
 }

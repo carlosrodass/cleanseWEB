@@ -1,6 +1,6 @@
-import { Register, Login, Home, Offer, Profile } from './../Pages/index';
+import { Register, Login, Home, Offer, Profile } from '../Pages/index';
 
-export const routes = [
+export const match = [
     {
         path: '/',
         component: Login
@@ -10,15 +10,15 @@ export const routes = [
         component: Register
     },
     {
-        path: '/home',
+        path: "/home",
         component: Home
     },
     {
-        path: '/offer',
+        path: "/offer",
         component: Offer
     },
     {
-        path: '/profile',
+        path: "/profile",
         component: Profile
     },
 ]

@@ -12,10 +12,9 @@ const Navegation = () => {
                     <Navbar.Toggle aria-controls='responsive-navbar-nav' />
                     <Navbar.Collapse id='responsive-navbar-nav' className="justify-content-end">
                         <Nav>
-                            <Nav.Link href="/">MAP</Nav.Link>
+                            <Nav.Link href="/map">MAP</Nav.Link>
                             <Nav.Link href="/offers">OFFERS</Nav.Link>
                             <Nav.Link href="/profile">PROFILE</Nav.Link>
-                            {/* <Nav.Link href="/PopularSeries">LOG OUT</Nav.Link> */}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

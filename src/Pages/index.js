@@ -1,7 +1,7 @@
 //Importing pages
 import Register from './Register/register';
 import Login from './Login/login';
-import Home from './Main/home';
+import Home from './Home/home';
 import Offer from './Offer/offer';
 import Profile from './Profile/profile';
 

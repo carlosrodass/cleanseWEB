@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Offer() {
+const Offer = () => {
     return (
         <div>
-            
+            PROFILE
         </div>
     )
 }
