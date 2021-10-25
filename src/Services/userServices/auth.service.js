@@ -7,9 +7,10 @@ class AuthService {
     // Login 
     login(email, password) {
         return axios
-            .post(`${BASE_URL}/login/${email}/${password}`)
+            .post(`${BASE_URL}/login?email=${email}&password=${password}`)
             .then((response) => {
-                if (response.data.accessToken) {
+                console.log(response.data.Token);
+                if (response.data.Token) {
                     localStorage.setItem("user", JSON.stringify(response.data));
                 }
 
@@ -18,7 +19,7 @@ class AuthService {
             .catch((error) => {
                 console.error(error);
             })
-    }   
+    }
     // Logout
     logout() {
         localStorage.removeItem("user");
@@ -31,6 +32,12 @@ class AuthService {
                 email,
                 password,
                 password_confirmation
+            })
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.error(error);
             })
     }
 }

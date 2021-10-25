@@ -38,7 +38,8 @@ export const login = (email, password) => (dispatch) => {
     return AuthService.login(email, password)
         .then((response) => {
             dispatch({
-                type: LOGIN_SUCCESS
+                type: LOGIN_SUCCESS,
+                payload: response.Token
             });
 
             dispatch({
