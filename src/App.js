@@ -13,7 +13,7 @@ function App() {
     <Provider store={store}>
       <Router>
         {/* Hacer que se muestre si el login es success y sino no mostrar la navbar */}
-        <Navegation />
+        {/* <Navegation /> */}
         <Switch>
           {match.map((route, index) => {
             return (
