@@ -4,6 +4,20 @@ import AuthService from './../../../Services/userServices/auth.service';
 export const register = (username, email, password, password_confirmation) => (dispatch) => {
     return AuthService.register(username, email, password, password_confirmation)
         .then((response) => {
+
+            if(response.status !== 201){
+                dispatch({
+                    type: REGISTER_FAIL
+                });
+
+                dispatch({
+                    type: SET_MESSAGE,
+                    payload: "Error al crear"
+                });
+
+                return Promise.reject();
+            }
+            
             dispatch({
                 type: REGISTER_SUCCESS
             });
@@ -14,6 +28,7 @@ export const register = (username, email, password, password_confirmation) => (d
             });
 
             return Promise.resolve();
+            // return response;
         },
 
             (error) => {
@@ -33,23 +48,23 @@ export const register = (username, email, password, password_confirmation) => (d
         );
 };
 
-
+//ACCIONES
 export const login = (email, password) => (dispatch) => {
+    //LLAMANDO A LA PETICION POST LOGIN
     return AuthService.login(email, password)
-        .then((response) => {
+        .then((response) => {//SI LA REQUEST ES SUCCESS, REALIZA LA ACCION DEL REDUCER Y ESTE LO GUARDA EN EL ESTADO DE LA APLICACIÓN 
             dispatch({
                 type: LOGIN_SUCCESS,
-                payload: response.Token
+                payload: response
             });
 
             dispatch({
                 type: SET_MESSAGE,
-                payload: response.data.message
+                payload: "Registered"
             });
 
-            return Promise.resolve();
+            return Promise.resolve(); 
         },
-
             (error) => {
                 const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
 

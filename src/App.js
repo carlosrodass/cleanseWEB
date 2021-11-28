@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { match } from './Config/match.routes';
-import Navegation from './Components/navegation';
+import Navegation from './Components/navegation.jsx';
 import { Provider } from 'react-redux';
 import store from './Redux/store';
 
@@ -13,17 +13,16 @@ function App() {
     <Provider store={store}>
       <Router>
         {/* Hacer que se muestre si el login es success y sino no mostrar la navbar */}
-        {/* <Navegation /> */}
+        <Navegation/>
         <Switch>
           {match.map((route, index) => {
             return (
               <Route
                 key={index}
-                path={route.path}
+                exact path={route.path}
                 component={route.component}
               />
             )
-
           })}
         </Switch>
       </Router>

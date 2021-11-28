@@ -4,37 +4,36 @@ const BASE_URL = 'http://localhost/cleanseAPI/public/api';
 
 class AuthService {
 
-    // Login 
+    // Login REQUEST
     login(email, password) {
         return axios
             .post(`${BASE_URL}/login?email=${email}&password=${password}`)
             .then((response) => {
-                console.log(response.data.Token);
                 if (response.data.Token) {
-                    localStorage.setItem("user", JSON.stringify(response.data));
+                    localStorage.setItem("user", JSON.stringify(response.data.Token));
                 }
-
-                return response.data;
+                return response.data.Token;
             })
             .catch((error) => {
                 console.error(error);
             })
     }
-    // Logout
+    // Logout REQUEST
     logout() {
         localStorage.removeItem("user");
     }
-    // Registro
+    // Retgister REQUEST
     register(username, email, password, password_confirmation) {
         return axios
-            .post(`${BASE_URL}/register/${username}/${email}/${password}/${password_confirmation}`, {
+            .post(`${BASE_URL}/register?username=${username}&email${email}&password${password}&password_confirmation${password_confirmation}`, {
                 username,
                 email,
                 password,
                 password_confirmation
             })
             .then((response) => {
-                console.log(response);
+                console.log("soy request",response);
+                return response;
             })
             .catch((error) => {
                 console.error(error);

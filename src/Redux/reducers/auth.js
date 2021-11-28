@@ -29,7 +29,7 @@ const auth_reducer = (state = initial_state, action) => {
             return {
                 ...state,
                 isLoggedIn: true,
-                user: payload.response.Token
+                user: payload.response
             };
 
         case LOGIN_FAIL:

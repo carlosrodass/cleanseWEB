@@ -13,7 +13,7 @@ const Navegation = () => {
                     <Navbar.Collapse id='responsive-navbar-nav' className="justify-content-end">
                         <Nav>
                             <Nav.Link href="/map">MAP</Nav.Link>
-                            <Nav.Link href="/offers">OFFERS</Nav.Link>
+                            <Nav.Link href="/offer">OFFERS</Nav.Link>
                             <Nav.Link href="/profile">PROFILE</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
